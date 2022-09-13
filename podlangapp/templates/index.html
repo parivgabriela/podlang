@@ -4,48 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css" media="screen" />
+    <script src="https://kit.fontawesome.com/713a94b317.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <a id="download">Download
-        <button id="stop">Stop
-        <script> 
-          let shouldStop = false;
-          let stopped = false;
-          const downloadLink = document.getElementById('download');
-          const stopButton = document.getElementById('stop');
-        
-          stopButton.addEventListener('click', function() {
-            shouldStop = true;
-          })
-        
-          var handleSuccess = function(stream) {  
-            const options = {mimeType: 'video/webm;codecs=vp9'};
-            const recordedChunks = [];
-            const mediaRecorder = new MediaRecorder(stream, options);  
-        
-            mediaRecorder.addEventListener('dataavailable', function(e) {
-              if (e.data.size > 0) {
-                recordedChunks.push(e.data);
-              }
-        
-              if(shouldStop === true && stopped === false) {
-                mediaRecorder.stop();
-                stopped = true;
-              }
-            });
-        
-            mediaRecorder.addEventListener('stop', function() {
-              downloadLink.href = URL.createObjectURL(new Blob(recordedChunks));
-              downloadLink.download = 'acetest.wav';
-            });
-        
-            mediaRecorder.start();
-          };
-        
-          navigator.mediaDevices.getUserMedia({ audio: true, video: false })
-              .then(handleSuccess);
-        
-        </script>
-       
+    <div class="menu">
+      <ul class="font-menu">
+        <li>Searcsh</li>
+        <li>Trending</li>
+        <li>Recommend</li>
+        <li>login/sing up</li>
+        <i class="fa-duotone fa-gear"></i>
+        <i class="fa-regular fa-gear"></i>
+ssas
+<i class="fa-solid fa-thumbs-up fa-5x"></i>
+<p><i class="fa-solid fa-coffee fa-sm"></i> When my six o’clock alarm buzzes, I require a pot of good java.</p>
+
+      </ul>
+    </div>
+    <div class="div-body">
+
+    </div> 
 </body>
 </html>
